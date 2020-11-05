@@ -1,0 +1,19 @@
+################################################################################
+# Run example
+# $ docker-compose run --rm haskell
+################################################################################
+---
+version: '3.8'
+
+x-shared-option: &shared_option
+  working_dir: /app/
+  user: ${USER_ID}:${GROUP_ID}
+  volumes:
+    - type: bind
+      source: ${PWD}/
+      target: /app/
+
+services:
+  haskell:
+    image: haskell:8
+    <<: *shared_option
