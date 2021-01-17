@@ -17,3 +17,6 @@ services:
   haskell:
     image: haskell:8
     <<: *shared_option
+  java:
+    image: adoptopenjdk/openjdk15:debian-slim
+    <<: *shared_option

@@ -17,4 +17,8 @@ GROUP_ID := $(shell id -g)
 ################################################################################
 .PHONY: haskell
 haskell: ## Haskell
-	USER_ID=$(USER_ID) GROUP_ID=$(GROUP_ID) docker-compose run --rm haskell
+	USER_ID=$(USER_ID) GROUP_ID=$(GROUP_ID) docker-compose run --rm haskell bash
+
+.PHONY: java
+java: ## Java
+	USER_ID=$(USER_ID) GROUP_ID=$(GROUP_ID) docker-compose run --rm java bash
